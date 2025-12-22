@@ -1,0 +1,173 @@
+/* Modal styles for forecast popup */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30, 27, 38, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+.modal-content {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(191, 174, 158, 0.18);
+  border: 1.5px solid var(--card-border);
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  min-width: 320px;
+  max-width: 90vw;
+  min-height: 200px;
+  color: var(--text-main);
+  transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+  z-index: 1001;
+}
+
+
+body {
+  font-family: 'Inter', 'Nunito', 'Roboto', Arial, sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  transition: background 0.4s;
+  color: var(--text-main);
+}
+
+
+
+:root {
+  --bg-gradient: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+  --card-bg: rgba(255,255,255,0.85);
+  --card-border: #e0e7ef;
+  --accent: #23272f;
+  --accent-strong: #111827;
+  --text-main: #111827;
+  --text-soft: #374151;
+  --heading-light: #111827;
+  --heading-dark: #fff;
+  --badge-bg: linear-gradient(90deg, #e5e7eb 0%, #d1d5db 100%);
+}
+
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(120deg, #232526 0%, #18181b 100%);
+  --card-bg: rgba(36, 39, 46, 0.92);
+  --card-border: #444857;
+  --accent: #fff;
+  --accent-strong: #f3f4f6;
+  --text-main: #f3f4f6;
+  --text-soft: #d1d5db;
+  --heading-light: #fff;
+  --heading-dark: #fff;
+  --badge-bg: linear-gradient(90deg, #374151 0%, #6b7280 100%);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+  border: 1.5px solid var(--card-border);
+  padding: 2.2rem 1.5rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+}
+.glass-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(191, 174, 158, 0.10);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .section-title {
+  color: var(--heading-dark);
+  text-shadow: 0 2px 8px #0008, 0 1px 2px #fff6;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+  color: var(--heading-light);
+  text-shadow: 0 2px 8px #fff8, 0 1px 2px #0006;
+}
+[data-theme="dark"] .section-title {
+  color: var(--heading-dark);
+  text-shadow: 0 2px 8px #0008, 0 1px 2px #fff6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-light);
+  text-shadow: 0 1px 2px #fff8, 0 1px 2px #0006;
+}
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+  color: var(--heading-dark);
+  text-shadow: 0 2px 8px #0008, 0 1px 2px #fff6;
+}
+
+p, span, li, div, label {
+  color: var(--text-main);
+}
+[data-theme="dark"] p, [data-theme="dark"] span, [data-theme="dark"] li, [data-theme="dark"] div, [data-theme="dark"] label {
+  color: var(--text-main);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.85em;
+  border-radius: 9999px;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: 0.5em;
+  background: var(--badge-bg);
+  color: var(--text-main);
+  box-shadow: 0 1px 4px #bfae9e22;
+}
+
+.fade-in {
+  animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.glass-card {
+  background: rgba(36, 39, 46, 0.85);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 9999px;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-left: 0.5em;
+}
+
+.fade-in {
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
