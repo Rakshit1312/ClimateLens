@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "node functions/__tests__/llm-client.google.test.js && node functions/__tests__/llm-client.retry.test.js && node functions/__tests__/generateInsights.integration.test.js && node functions/__tests__/generateInsights.fallback.test.js && node functions/__tests__/advisory-utils.test.js && node functions/__tests__/prompt-builder.test.js && node functions/__tests__/weather.cache.test.js",
+    "build": "cd frontend && npm ci && npm run build",
+    "dev": "npx netlify-cli dev",
+    "start": "npm run build && npx netlify-cli deploy --dir=frontend/dist --prod --message \"Deploy from local\"",
+    "deploy:netlify": "npx netlify-cli deploy --dir=frontend/dist --prod --message \"Deploy from local\""
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "react-icons": "^5.5.0"
+  }
+}
